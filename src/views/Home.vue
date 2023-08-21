@@ -8,7 +8,7 @@
         <a href="http://github.com" target="_blank" rel="noopener noreferrer"
           >Github</a
         >
-        <<router-link to="/doc">开始<</router-link>
+        <router-link to="/doc">开始</router-link>
         <!-- 使用的vue-router不能使用a标签，使用router-link实现内部跳转 -->
       </p>
     </div>
