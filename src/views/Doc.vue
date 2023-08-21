@@ -3,7 +3,7 @@
     <Topnav />
 
     <div class="content">
-      <aside>
+      <aside v-if="asideVisible">
         <h2>组件列表</h2>
         <ol>
           <li><router-link to="/doc/switch">Switch 组件</router-link></li>
@@ -19,8 +19,15 @@
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
+import { inject, Ref } from "vue";
 export default {
   components: { Topnav },
+  setup() {
+    const asideVisible = inject<Ref<boolean>>("aisdeVisible");
+    console.log("doc为:" + asideVisible.value);
+
+    return { asideVisible };
+  },
 };
 </script>
 <style lang="scss" scoped>
