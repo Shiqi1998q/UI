@@ -1,25 +1,25 @@
 <template>
-    <div>
-        <Topnav></Topnav>
-        <div class="banner">
-            <h1>23UI</h1>
-            <h2>一个写于2023年的UI框架</h2>
-            <p class="actions">
-                <a href="http://" target="_blank" rel="noopener noreferrer">Github</a>
-                <a href="http://" target="_blank" rel="noopener noreferrer">开始</a>
-
-            </p>
-
-        </div>
+  <div>
+    <Topnav></Topnav>
+    <div class="banner">
+      <h1>23UI</h1>
+      <h2>一个写于2023年的UI框架</h2>
+      <p class="actions">
+        <a href="http://github.com" target="_blank" rel="noopener noreferrer"
+          >Github</a
+        >
+        <<router-link to="/doc">开始<</router-link>
+        <!-- 使用的vue-router不能使用a标签，使用router-link实现内部跳转 -->
+      </p>
     </div>
+  </div>
 </template>
 <script lang="ts">
-import Topnav from '../components/Topnav.vue'
+import Topnav from "../components/Topnav.vue";
 export default {
-    components: { Topnav }
-}
+  components: { Topnav },
+};
 </script>
-
 
 <style lang="scss" scoped>
 .banner {
@@ -29,10 +29,10 @@ export default {
   align-items: center;
   flex-direction: column;
   background: lightgreen;
-  > .actions{
+  > .actions {
     padding: 8px 0;
     a {
-      margin:0 8px;
+      margin: 0 8px;
       background: #fff;
       display: inline-block;
       $h: 28px;
