@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Topnav />
+  <div class="layout">
+    <Topnav class="nav" />
 
     <div class="content">
       <aside v-if="asideVisible">
@@ -13,13 +13,16 @@
         </ol>
         边栏
       </aside>
-      <main>主内容</main>
+      <main>
+        <router-view />
+      </main>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Topnav from "../components/Topnav.vue";
 import { inject, Ref } from "vue";
+
 export default {
   components: { Topnav },
   setup() {
