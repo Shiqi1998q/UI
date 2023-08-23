@@ -5,6 +5,7 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
+    <span class="toggleAside" @click="toggleAside"></span>
   </div>
 </template>
 <script lang="ts">
@@ -12,7 +13,7 @@ import { inject, Ref } from "vue";
 export default {
   setup() {
     const asideVisible = inject<Ref<boolean>>("aisdeVisible");
-    console.log("top" + asideVisible.value);
+
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
@@ -32,19 +33,23 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
-  > .logo {
+
+  >.logo {
     max-width: 6em;
     margin-right: auto;
   }
-  > .menu {
+
+  >.menu {
     display: flex;
     white-space: nowrap;
     flex-wrap: nowrap;
-    > li {
+
+    >li {
       margin: 0 1em;
     }
   }
-  > .toggleAside {
+
+  >.toggleAside {
     width: 24px;
     height: 24px;
     background: red;
@@ -54,16 +59,18 @@ export default {
     transform: translateY(-50%);
     display: none;
   }
+
   @media (max-width: 500px) {
-    > .menu {
+    >.menu {
       display: none;
     }
-    > .logo {
+
+    >.logo {
       margin: 0 auto;
     }
-    > .toggleAside {
+
+    >.toggleAside {
       display: inline-block;
     }
   }
-}
-</style>
+}</style>
